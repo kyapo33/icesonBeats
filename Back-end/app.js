@@ -32,12 +32,12 @@ const productRoutes = require('./routes/product');
 const braintreeRoutes = require('./routes/braintree');
 const orderRoutes = require('./routes/order')
 
-app.use('api/user', authRoutes);
-app.use('api/userone', userRoutes);
-app.use('api/category', categoryRoutes);
-app.use('api/product', productRoutes);
-app.use('api/pay', braintreeRoutes);
-app.use('api/order', orderRoutes);
+app.use('/api/user', authRoutes);
+app.use('/api/userone', userRoutes);
+app.use('/api/category', categoryRoutes);
+app.use('/api/product', productRoutes);
+app.use('/api/pay', braintreeRoutes);
+app.use('/api/order', orderRoutes);
 
 const port = process.env.PORT
 app.listen(port, () => {
