@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+        	<div class="invoice-title">
+    			<h2>Facture</h2><h3 class="pull-right">Commande n°: {{orderid}}  </h3>
+    		</div>
+    		<hr>
+    		<div class="row">
+    			<div class="col-xs-6">
+    				<address>
+              <strong>De :</strong><br/>
+                IcesonBeats<br/>
+                icesonbeats@gmail.com
+              </address>
+    			</div><br/>
+          <br/>
+    			<div class="col-xs-6 text-right">
+    				<address>
+              <strong>A :</strong><br>
+                {{username}}<br>
+                {{useremail}}
+    				</address><br>
+            <br>
+    			</div>
+    		</div>
+    		<div class="row">
+    			<div class="col-xs-6">
+    			</div>
+    			<div class="col-xs-6 text-right">
+    				<address>
+    					<strong>Date:  </strong><br>
+    					{{dateorder}}<br><br>
+    				</address>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+    <div class="row">
+    	<div class="col-md-12">
+    		<div class="panel panel-default">
+    			<div class="panel-heading row">
+    				<h3 class="panel-title col-8"><strong>Commande</strong></h3>
+    				<h3 class="panel-title col-4"><strong>Total : {{total}} € </strong></h3>
+    			</div>
+          <hr>
+    			<div class="panel-body">
+            {{#each products}}
+              <h4>Produit : {{this.name}}</h4>
+              <h4 class="text-center  ml-5">Prix : {{this.price}} €</h4>
+              <h4 class="text-center  ml-5">Lien de téléchargement : {{this.download}}</h4>
+            {{/each}}  
+    			</div>
+    		</div>
+    	</div>
+    </div>
+  </div>
+</div>
+

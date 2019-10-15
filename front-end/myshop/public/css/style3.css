@@ -1,0 +1,166 @@
+input[type=checkbox] {
+  transform: scale(2);
+  -ms-transform: scale(2);
+  -webkit-transform: scale(2);
+  padding: 10px;
+  width:200px;
+  opacity: 0;
+}
+
+div#LoginForm{ 
+  padding:10%;
+}
+
+.form-heading { color:#fff; font-size:23px;}
+.panel h2{ color:#444444; font-size:18px; margin:0 0 8px 0;}
+.panel p { color:#777777; font-size:14px; margin-bottom:30px; line-height:24px;}
+.login-form .form-control {
+  background: #f7f7f7 none repeat scroll 0 0;
+  border: 1px solid #d4d4d4;
+  border-radius: 4px;
+  font-size: 14px;
+  height: 50px;
+  line-height: 50px;
+}
+.main-div {
+  background: #ffffff none repeat scroll 0 0;
+  border-radius: 2px;
+  margin: 10px auto 30px;
+  max-width: 38%;
+  padding: 50px 70px 70px 71px;
+}
+
+.main-div-2 {
+  background: #ffffff none repeat scroll 0 0;
+  border-radius: 2px;
+  margin: 10px auto 30px;
+  width: 48%;
+  padding: 50px 70px 70px 71px;
+}
+
+.login-form .form-group {
+  margin-bottom:10px;
+}
+.login-form{ text-align:center;}
+
+.login-form  .btn.btn-success {
+  margin-top: 20px;
+}
+
+.userinterface {
+  padding-top: 10%;
+}
+.card-info .table {
+  margin-bottom: -17px;
+}
+.button-details {
+  margin-top: -3px;
+  margin-right: -20px;
+}
+.card-info td {
+ border-top: none;
+}
+.card-order .table-order {
+  margin-bottom: -17px;
+}
+.button-order {
+  margin-top: -3px;
+  margin-right: -19px;
+}
+.card-order td {
+ border-top: none;
+}
+.button-history {
+  margin-right: 26px;
+}
+.info-product .list-group-item {
+  display: inline-table;
+}
+.contact-form {
+  padding-top: 10%;
+}
+
+@media (max-width: 1024px) {
+  .main-div-2 {
+    min-width: 70%;
+  }
+  .main-div {
+    min-width: 70%;
+  }
+}
+@media (max-width: 768px) {
+  .main-div-2 {
+    min-width: 90%;
+  }
+  div#LoginForm{ 
+    padding-top:20%;
+  }
+  .main-div {
+    min-width: 90%;
+  }
+}
+
+@media (max-width: 414px) {
+  .card-history tr {
+    margin: none;
+    display: block;
+  }
+  .card-order td {
+    margin: none;
+    display: block;
+  }
+  .card-info td {
+    margin: none;
+    display: block;
+  }
+  .button-history, .button-order, .button-details {
+    margin: none;
+    width: 100%;
+  }
+  .main-div-2 {
+    width: 120%;
+    margin-left: -10%;
+  }
+  div#LoginForm{ 
+    padding-top:15%;
+  }
+  .main-div {
+    min-width: 130%;
+    margin-left: -15%;
+  }
+}
+@media (max-width: 375px) {
+  .main-div-2 {
+    width: 130%;
+    margin-left: -15%;
+  } 
+  .main-div {
+    min-width: 130%;
+    margin-left: -15%;
+  } 
+  div#LoginForm{ 
+    padding-top:20%;
+  }  
+}
+
+@media (max-width: 320px) {
+  .card-history p {
+    font-size: 0.9em;
+  } 
+  .main-div {
+    min-width: 140%;
+    margin-left: -20%;
+  } 
+  .forgot-button {
+    margin-left: -20%;  
+  }
+}
+
+
+
+
+
+
+
+
+ 
