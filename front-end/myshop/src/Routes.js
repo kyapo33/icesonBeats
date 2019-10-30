@@ -19,6 +19,7 @@ import Contact from './core/Contact'
 import ChangePassword from './user/ChangePassword'
 import ForgotPassword from './user/ForgotPassword'
 import ResetPassword from './user/ResetPassword'
+import Bill from './user/Bill'
 
 const Routes = () => {
     return (
@@ -38,6 +39,7 @@ const Routes = () => {
                 <AdminRoute path = "/admin/orders" exact component= {Orders}/>
                 <PrivateRoute path = "/profile/update/:userId" exact component= {Profile}/>
                 <PrivateRoute path = "/user/change-password/:userId" exact component= {ChangePassword}/>
+                <PrivateRoute path = "/facture/:orderId" exact component= {Bill}/>
                 <Route path = "/contact" exact component= {Contact}/>
                 <Route path = "/forgotpassword" exact component= {ForgotPassword}/>
                 <Route path = "/reset-password/:resetPasswordToken" exact component= {ResetPassword}/>

@@ -3,8 +3,33 @@ const controller = express.Router()
 const nodeMailer = require('nodemailer');
 const hbs = require('../node_modules/nodemailer-express-handlebars');
 require("dotenv").config();
+const fastcsv = require('fast-csv');
 
 const {Order, CartItem} = require('../models/order')
+
+controller.getById = async (req, res, next, id) => {
+    try {
+        const order = await Order.findById(id)
+        .populate('user', 'name email')
+        .exec()
+        if(!order) {
+            return res.status(400).json({
+                error: 'Aucune commande trouvé'
+            })   
+        }
+        req.order = order;
+        next();
+    }
+    catch (err) {
+        return res.status(400).json({
+            error: 'Aucune comande trouvé'
+        })  
+    }
+}
+
+controller.read = (req, res) => {
+    return res.json(req.order);
+}
 
 controller.create = async (req, res) => {
     req.body.order.user = req.profile
@@ -54,7 +79,23 @@ controller.create = async (req, res) => {
                 }); 
             }
             res.status(200).json('A verification email has been sent to ' + user.email + '.');
-        });     
+        }); 
+        const createCsvWriter = require('csv-writer').createObjectCsvWriter;
+        const csvWriter = createCsvWriter({
+            path: `views/bill/${order._id}.csv`,
+            header: [
+                {id: 'name', title: 'Commande'},
+                {id: 'total', title: 'Total'},
+                {id: 'date', title: 'Date'}
+            ]
+        });
+        const records = [
+            {name: `${order._id}`,  total: `${order.amount}`, date: `${order.createdAt}` },
+        ];
+        csvWriter.writeRecords(records) 
+        .then(() => {
+            console.log('...Done');
+        });
     }
     catch (err) {
         return res.status(400).json({

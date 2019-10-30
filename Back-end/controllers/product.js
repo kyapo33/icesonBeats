@@ -92,8 +92,9 @@ controller.decreaseQuantity = async (req, res, next) => {
     try {
         let bulkOps = await req.body.order.products.map((item) => {
             return {
-                deleteOne: {
+                updateOne: {
                     filter: {_id: item._id},
+                    update: { $inc: { quantity: -item.count, sold: +item.count } }
                 }
             }   
         });

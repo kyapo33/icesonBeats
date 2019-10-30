@@ -99,6 +99,7 @@ const Dashboard = () => {
                                             <tr>
                                                 <th><p>N° de commande : {o._id}</p></th>
                                                 <button onClick={() => setShowDetails(showDetails === o._id ? false : o._id)} className="btn btn-sm btn-info common-class button-history mt-2"><i className="fas fa-info-circle"></i>Voir plus</button>
+                                                <button><Link to={`/facture/${o._id}`}>Facture</Link></button>
                                             </tr> 
                                         </tbody>
                                     </table>                              
@@ -148,6 +149,7 @@ const Dashboard = () => {
                     <div className="col-lg-9" >
                         {userInfo()}
                         {userHistory(history)}
+                        {JSON.stringify(history)}
                     </div>
                 </div>
             </div>

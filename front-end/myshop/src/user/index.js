@@ -17,6 +17,22 @@ export const read = async (userId, token) => {
     }
 };
 
+export const getOneOrder = async (orderId) => {
+    try {
+        const response = await fetch(`${API_URL}/order/bill/${orderId}`, {
+            method: "GET",
+            headers: {
+                Accept: 'application/json',
+                "Content-Type": "application/json",
+            },
+        });
+        return response.json();
+    }
+    catch (err) {
+        return console.log(err);
+    }
+};
+
 export const update = async (userId, token, user) => {
     try {
         const response = await fetch(`${API_URL}/userone/customers/update/${userId}`, {
@@ -117,3 +133,4 @@ export const resetPassword = async resetInfo => {
         return console.log(err);
     }
 };
+
